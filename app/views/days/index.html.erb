@@ -1,22 +1,14 @@
 <h1>Planning</h1>
 
-<%= link_to "Nouvelle tâche", new_task_path() %>
-
+<%= link_to "Nouvelle tâche", new_task_path(), class: "button" %>
+<%= Date.today %>
 <div class="planning">
+<% ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"].each do |day| %>
   <div class="day">
-    <%= link_to "ss",%>
-    <p class="day-title">Lundi</p>
+    <p class='day-title'><%= day %></p>
+    <% (7..19).each do |hour| %>
+      <div class='hour'><%= hour %></div>
+    <% end %>
   </div>
-  <div class="day">
-    <p class="day-title">Mardi</p>
-  </div>
-  <div class="day">
-    <p class="day-title">Mercredi</p>
-  </div>
-  <div class="day">
-    <p class="day-title">Jeudi</p>
-  </div>
-  <div class="day">
-    <p class="day-title">Vendredi</p>
-  </div>
+<% end %>
 </div>
