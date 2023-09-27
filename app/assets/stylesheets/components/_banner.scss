@@ -1,0 +1,30 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    margin-bottom: 24px;
+  }
+
+  a {
+    font-size: 20px
+  }
+}
+
+.banner-title {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 22px 0px;
+}
+
+.banner-picture {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+}
