@@ -1,1 +1,13 @@
-<h1>nouvelle tâche</h1>
+<div class="container">
+  <%= simple_form_for(@task) do |f| %>
+    <h1>Nouvelle tâche</h1>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.input :duration %>
+    <%= f.input :urgence %>
+    <%= f.input :importance %>
+    <%= f.input :activity %>
+    <%= f.submit %>
+  <% end %>
+  <%= link_to "Retour agenda", days_path(), class: "button" %>
+</div>
