@@ -3,11 +3,13 @@
     <h1>Nouvelle tâche</h1>
     <%= f.input :title %>
     <%= f.input :content %>
-    <%= f.input :duration %>
+    <%= f.label :duration, "Durée" %>
+    <%= f.select :duration, options_for_select((1..12).map { |n| ["#{n * 15} minutes", n * 15] }, @task.duration), {}, class: 'form-control' %>
+    <%= f.input :due_date %>
     <%= f.input :urgence %>
     <%= f.input :importance %>
-    <%= f.input :activity %>
+    <%= f.input :activity, as: :select, collection: ["charge intellectuelle", "peu de charge intellectuelle"] %>
     <%= f.submit %>
   <% end %>
-  <%= link_to "Retour agenda", days_path(), class: "button" %>
+  <%= link_to "Retour agenda", tasks_path(), class: "button" %>
 </div>

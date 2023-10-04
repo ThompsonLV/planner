@@ -10,28 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_27_133545) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_04_132835) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "days", force: :cascade do |t|
-    t.time "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
     t.string "content"
-    t.time "duration"
     t.boolean "urgence"
     t.boolean "importance"
     t.string "activity"
-    t.bigint "day_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["day_id"], name: "index_tasks_on_day_id"
+    t.integer "duration"
+    t.datetime "due_date"
   end
 
-  add_foreign_key "tasks", "days"
 end

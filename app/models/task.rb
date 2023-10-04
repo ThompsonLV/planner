@@ -1,5 +1,4 @@
 class Task < ApplicationRecord
-  belongs_to :day
-  validates :activity, inclusion: { in: ['Manuelle', 'Intellectuelle'] }
-
+  validates :activity, presence: true, inclusion: { in: ["charge intellectuelle", "peu de charge intellectuelle"] }
+  validates :title, :content, :duration, presence: true
 end
