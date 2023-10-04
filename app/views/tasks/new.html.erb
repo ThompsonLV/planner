@@ -5,7 +5,8 @@
     <%= f.input :content %>
     <%= f.label :duration, "Durée" %>
     <%= f.select :duration, options_for_select((1..12).map { |n| ["#{n * 15} minutes", n * 15] }, @task.duration), {}, class: 'form-control' %>
-    <%= f.input :due_date %>
+    <%= f.label :due_date %>
+    <%= f.date_select :due_date, start_year: Date.today.year, end_year: Date.today.year + 5 %>
     <%= f.input :urgence %>
     <%= f.input :importance %>
     <%= f.input :activity, as: :select, collection: ["charge intellectuelle", "peu de charge intellectuelle"] %>

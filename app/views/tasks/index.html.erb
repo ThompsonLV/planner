@@ -6,7 +6,7 @@
       <div class="day">
         <p class="day-title"><%= (Date.today.beginning_of_week + day.days).strftime('%A') %> </p>
         <% (7..19).each do |hour| %>
-          <div class='hour'><%= hour %></div>
+          <div class='hour'> <%= (Date.today.beginning_of_week + hour.hours).strftime('%H') %> </div>
         <% end %>
       </div>
     <% end %>
