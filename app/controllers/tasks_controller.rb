@@ -7,7 +7,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.begin_date = Time.now.strftime("%H")
+    @task.begin_date = Time.now.strftime("%H") # Ici se fera le calcul pour définir la date de début et l'heure de début
     if @task.save
       redirect_to tasks_path
     else
