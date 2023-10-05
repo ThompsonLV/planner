@@ -1,15 +1,16 @@
 <div class="container">
   <h2>Planning</h2>
-
-  <div class="planning">
-    <% (0..4).each do |day| %>
-      <div class="day">
-        <p class="day-title"><%= (Date.today.beginning_of_week + day.days).strftime('%A') %> </p>
-        <% (7..19).each do |hour| %>
-          <div class='hour'> <%= (Date.today.beginning_of_week + hour.hours).strftime('%H') %> </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+  <div id='calendar'></div>
   <%= link_to "Nouvelle tâche", new_task_path(), class: "button" %>
 </div>
+
+  <%# <div class="planning">
+    <% (0..4).each do |day|
+      <div class="day">
+        <p class="day-title"><%= (Date.today.beginning_of_week + day.days).strftime('%A')  </p>
+        <% (7..19).each do |hour|
+          <div class="hour"> <%= (Date.today.beginning_of_week + hour.hours).strftime('%H')  </div>
+        <% end
+      </div>
+    <% end
+  </div> %>
